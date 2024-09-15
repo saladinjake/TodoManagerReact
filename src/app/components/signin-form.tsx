@@ -36,7 +36,7 @@ const SigninForm = () => {
   const loginSocial = async (provider: any) => {
     try {
       //authenticate the user by calling a popup
-      const result = await signInWithProvider(auth, provider);
+      const result = await signInWithProvider( provider);
       //fetch the user data
      // setUser(result.user); // Stores user data in the 'user' state
        toast.success("Successfully signed in");
