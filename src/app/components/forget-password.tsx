@@ -31,14 +31,14 @@ const PasswordForgotForm = () => {
   const auth = getAuth();
 
   const triggerResetEmail = async (data) => {
-    await sendPasswordResetEmail(auth, data.email);
+    await sendPasswordResetEmail(auth, data?.email);
     console.log("Password reset email sent")
   }
 
   const onSubmit: SubmitHandler<IUser> = async (data) => {
     try {
       setIsSubmitting(true);
-      await triggerResetEmail( data.email);
+      await triggerResetEmail( data);
       toast.success("Email Sent to your inbox");
       router.push("todos");
     } catch (e: any) {
