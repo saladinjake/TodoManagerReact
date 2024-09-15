@@ -21,8 +21,8 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 // Sign in and sign out soscial auth
-export const signInWithProvider = (provider) => signInWithPopup(auth,provider);
-export const signOutOfProvider = (auth) => signOut();
+export const signInWithProvider = (provider: any) => signInWithPopup(auth,provider);
+export const signOutOfProvider = (auth: any) => signOut();
 
 const googleService = new GoogleAuthProvider();
 googleService.setCustomParameters({ prompt: "select_account" });
