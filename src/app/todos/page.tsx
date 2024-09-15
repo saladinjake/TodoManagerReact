@@ -124,7 +124,7 @@ const Todos = () => {
           showOverlay={showOverlay}
           setShowOverlay={setShowOverlay}
           onClose={handleClose}
-          handleSendToApi={handleSendToApi}
+          handleSubmit={handleSendToApi}
           isSubmitting={isSubmitting}
         />
 
