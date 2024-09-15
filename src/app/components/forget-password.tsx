@@ -1,11 +1,19 @@
+"use client"
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import toast from "react-hot-toast";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { auth } from "../services";
 import CustomInput from "./custom-input";
+
+import {
+  getAuth,
+  updatePassword,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
+} from 'firebase/auth';
+
 interface IUser {
     email: string;
     password: string;
@@ -18,11 +26,20 @@ const PasswordForgotForm = () => {
     formState: { isValid },
     handleSubmit,
   } = useForm<IUser>();
+
+   const [email, setEmail] = useState('')
+  const auth = getAuth();
+
+  const triggerResetEmail = async (data) => {
+    await sendPasswordResetEmail(auth, data.email);
+    console.log("Password reset email sent")
+  }
+
   const onSubmit: SubmitHandler<IUser> = async (data) => {
     try {
       setIsSubmitting(true);
-      await signInWithEmailAndPassword(auth, data.email, data.password);
-      toast.success("Successfully signed in");
+      await triggerResetEmail( data.email);
+      toast.success("Email Sent to your inbox");
       router.push("todos");
     } catch (e: any) {
       toast.error(e.message);
