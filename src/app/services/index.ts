@@ -22,7 +22,7 @@ export const db = getFirestore(app);
 
 // Sign in and sign out soscial auth
 export const signInWithProvider = (provider) => signInWithPopup(auth,provider);
-export const signOutOfProvider = () => signOut();
+export const signOutOfProvider = (auth) => signOut();
 
 const googleService = new GoogleAuthProvider();
 googleService.setCustomParameters({ prompt: "select_account" });

@@ -50,7 +50,7 @@ const SigninForm = () => {
   //Function to logout user
   const logoutSocial = async () => {
     try {
-      await signOut(auth); // Signs the user out through Firebase
+      await signOutOfProvider(auth); // Signs the user out through Firebase
         toast.success("Successfully logged out");
     } catch (e) {
       console.log(e);
