@@ -90,7 +90,7 @@ const SigninForm = () => {
       />
 
       <div className="flex justify-end text-sm text-blue-600 font-medium py-4">
-        <button   onClick={() => router.push("/forgotPassword")}>Forgot Password?</button>
+        <button   onClick={() => router.push("?forgotPassword")}>Forgot Password?</button>
       </div>
 
       <button

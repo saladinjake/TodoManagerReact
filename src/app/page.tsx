@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 
 import SignupForm from "./components/signup-form";
 import SigninForm from "./components/signin-form";
+import ForgotPassword from "./components/forget-password"
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -15,7 +16,7 @@ export default function Home() {
         <div className="w-full sm:w-[380px] mx-auto">
           {searchParams.get("action") === "signup" ? (
             <SignupForm />
-          ) : (
+          ) : searchParams.get("action") === "forgotPassword" ? ( <ForgotPassword /> ): (
             <SigninForm />
           )}
         </div>
