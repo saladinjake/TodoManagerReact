@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, forwardRef } from "react";
 import { format } from "date-fns";
 import { addTodo } from "../services/todos";
-import { ITodo } from "../utils/typings";
+import { ITodo } from "../helpers/typings";
 import TodoForm from "./todo-form";
 
 interface IProps {

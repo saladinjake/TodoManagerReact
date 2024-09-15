@@ -6,8 +6,8 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import FloatingButton from "../components/floating-button";
 import TodoCard from "../components/todo-card";
-import { type ITodo } from "../utils/typings";
-import groupTodosByDate from "../utils/group-todos-by-date";
+import { type ITodo } from "../helpers/typings";
+import groupTodosByDate from "../helpers/group-todos-by-date";
 import {
   addTodo,
   deleteTodo,

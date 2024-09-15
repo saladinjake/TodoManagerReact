@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import { ITodo } from "../utils/typings";
+import { ITodo } from "../helpers/typings";
 
 interface IProps {
   data: ITodo;

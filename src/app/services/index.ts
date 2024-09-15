@@ -7,9 +7,9 @@ import "firebase/compat/auth";
 
 //socian auth
 // Initialize firebase and google providerfirebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
+// const auth = firebase.auth();
+// const provider = new firebase.auth.GoogleAuthProvider();
+// provider.setCustomParameters({ prompt: "select_account" });
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHfcOjpYZ0xC_tL-9CHbxdWIqF-319ug8",
@@ -25,5 +25,5 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 // Sign in and sign out sosical auth
-export const signIn = () => auth.signInWithPopup(provider);
-export const signOut = () => auth.signOut();
+// export const signIn = () => auth.signInWithPopup(provider);
+// export const signOut = () => auth.signOut();

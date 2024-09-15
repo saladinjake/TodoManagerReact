@@ -11,7 +11,7 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from ".";
-import { ITodo } from "../utils/typings";
+import { ITodo } from "../helpers/typings";
 import { format } from "date-fns";
 import { nanoid } from "nanoid";
 enum COLLECTIONS {

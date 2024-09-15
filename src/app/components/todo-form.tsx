@@ -1,6 +1,6 @@
 import React from "react";
 import DatePicker from "./date-picker";
-import { ITodo } from "../utils/typings";
+import { ITodo } from "../helpers/typings";
 
 interface IProps {
   todo: ITodo;
