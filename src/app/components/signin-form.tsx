@@ -33,7 +33,7 @@ const SigninForm = () => {
   //social auth
 
   //Function to login user 
-  const loginSocial = async (provider) => {
+  const loginSocial = async (provider: any) => {
     try {
       //authenticate the user by calling a popup
       const result = await signInWithProvider(auth, provider);
