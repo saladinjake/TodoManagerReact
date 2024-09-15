@@ -30,6 +30,7 @@ const SigninForm = () => {
       setIsSubmitting(false);
     }
   };
+  //social auth
 
   // useEffect(() => {
   //   firebase.auth().onAuthStateChanged(async (user) => {
