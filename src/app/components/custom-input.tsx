@@ -1,6 +1,5 @@
 import React, { useId, forwardRef, ChangeEventHandler } from "react";
 import { UseFormRegister } from "react-hook-form";
-
 interface IProps {
   label: string;
   placeholder: string;
