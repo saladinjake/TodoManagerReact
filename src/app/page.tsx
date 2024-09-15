@@ -1,21 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 
 
 export default function Home() {
-  
+  const searchParams = useSearchParams();
 
   return (
     <main className="h-screen flex">
       <section className="w-full lg:w-1/2 pt-24 px-8 lg:px-0">
-        <div className="w-full sm:w-[380px] mx-auto">
-         
-        </div>
+        
 
         <footer className="text-center text-gray-400 mt-24 text-xs">
-          &copy; 2024 ALL RIGHTS RESERVED
+          &copy; 2023 ALL RIGHTS RESERVED
         </footer>
       </section>
 
