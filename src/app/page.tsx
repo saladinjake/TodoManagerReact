@@ -3,8 +3,6 @@
 import Image from "next/image";
 
 
-import SignupForm from "./components/signup-form";
-import SigninForm from "./components/signin-form";
 
 export default function Home() {
   
