@@ -31,6 +31,12 @@ const SigninForm = () => {
     }
   };
 
+  // useEffect(() => {
+  //   firebase.auth().onAuthStateChanged(async (user) => {
+  //     setUser(user);
+  //   });
+  // }, []);
+
   return (
     <>
       <h1 className="text-2xl font-semibold text-gray-900 mb-5">
