@@ -19,9 +19,9 @@ enum COLLECTIONS {
 }
 export const getTodos = async () => {
   try {
-    const querySnapshot = await getDocs(collection(db, COLLECTIONS.TODOS));
+    const firebaseQuery = await getDocs(collection(db, COLLECTIONS.TODOS));
     const todos: ITodo[] = [];
-    querySnapshot.forEach((doc) => {
+    firebaseQuery.forEach((doc) => {
       todos.push({
         id: doc.id,
         ...doc.data(),
@@ -48,9 +48,9 @@ export const getTodosByUserId = async (userId: string) => {
       where("userId", "==", userId)
     );
 
-    const querySnapshot = await getDocs(q);
+    const firebaseQuery = await getDocs(q);
     const todos: ITodo[] = [];
-    querySnapshot.forEach((doc) => {
+    firebaseQuery.forEach((doc) => {
       todos.push({
         id: doc.id,
         ...doc.data(),
@@ -80,12 +80,12 @@ export const deleteTodo = async (todoId: string) => {
 
 export const addTodo = async (todo: ITodo) => {
   try {
-    const docRef = await addDoc(collection(db, COLLECTIONS.TODOS), {
+    const queryRef = await addDoc(collection(db, COLLECTIONS.TODOS), {
       ...todo,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
     });
-    return docRef.id;
+    return queryRef.id;
   } catch (e) {
     console.error(e);
   }
@@ -97,10 +97,10 @@ export const addTodo = async (todo: ITodo) => {
 
 export const updateTodo = async (todoId: string, data: ITodo) => {
   try {
-    const todoRef = doc(db, COLLECTIONS.TODOS, todoId);
+    const queryRef = doc(db, COLLECTIONS.TODOS, todoId);
 
     // Set the "capital" field of the city 'DC'
-    await updateDoc(todoRef, {
+    await updateDoc(queryRef, {
       ...data,
       updatedAt: serverTimestamp(),
     });

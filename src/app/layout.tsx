@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
-// import { onAuthStateChanged } from "firebase/auth";
-// import { auth } from "./services";
+
 
 import "./globals.css";
 
