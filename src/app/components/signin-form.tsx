@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import toast from "react-hot-toast";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { auth } from "../services";
+import { auth, facebook, google, signInWithProvider,signOutOfProvider } from "../services";
 import CustomInput from "./custom-input";
 interface IUser {
     email: string;
@@ -32,11 +32,30 @@ const SigninForm = () => {
   };
   //social auth
 
-  // useEffect(() => {
-  //   firebase.auth().onAuthStateChanged(async (user) => {
-  //     setUser(user);
-  //   });
-  // }, []);
+  //Function to login user 
+  const loginSocial = async (provider) => {
+    try {
+      //authenticate the user by calling a popup
+      const result = await signInWithProvider(auth, provider);
+      //fetch the user data
+     // setUser(result.user); // Stores user data in the 'user' state
+       toast.success("Successfully signed in");
+      router.push("todos"); 
+    } catch (e) {
+     
+      console.log(`login error ${e}`);
+      //setIsLogin(false); // Sets 'isLogin' to false on login failure
+    }
+  }
+  //Function to logout user
+  const logoutSocial = async () => {
+    try {
+      await signOut(auth); // Signs the user out through Firebase
+        toast.success("Successfully logged out");
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>
@@ -71,7 +90,7 @@ const SigninForm = () => {
       />
 
       <div className="flex justify-end text-sm text-blue-600 font-medium py-4">
-        <button>Forgot Password?</button>
+        <button   onClick={() => router.push("/forgotPassword")}>Forgot Password?</button>
       </div>
 
       <button
@@ -92,12 +111,12 @@ const SigninForm = () => {
         </div>
       </div>
 
-      <button className="w-full h-[44px] bg-[#F3F9FA] text-sm text-gray-500 font-medium rounded-xl flex items-center pl-[94px] gap-x-1">
+      <button onClick={()=> loginSocial(google)} className="w-full h-[44px] bg-[#F3F9FA] text-sm text-gray-500 font-medium rounded-xl flex items-center pl-[94px] gap-x-1">
         <Image src="/icons/google.svg" alt="google" width="36" height="36" />
         Sign in with Google
       </button>
 
-      <button className="w-full h-[44px] bg-[#F3F9FA] text-sm text-gray-500 font-medium rounded-xl flex items-center pl-[100px] gap-x-2 mt-4">
+      <button onClick={()=> loginSocial(facebook)} className="w-full h-[44px] bg-[#F3F9FA] text-sm text-gray-500 font-medium rounded-xl flex items-center pl-[100px] gap-x-2 mt-4">
         <Image src="/icons/facebook.svg" alt="google" width="24" height="24" />
         Sign in with facebook
       </button>

@@ -36,7 +36,7 @@ const CustomInput = forwardRef<HTMLInputElement, IProps>((props, ref) => {
         type={type}
         id={identifier}
         placeholder={placeholder}
-        className="bg-input-bg border border-[#E5E9F1] h-[44px] rounded-xl px-3 py-1 placeholder:text-sm"
+        className="bg-[#fff] border  border-[#fff] h-[44px] text-black-700 rounded-xl px-3 py-1 placeholder:text-sm"
         onChange={onChange}
         {...(register && register(name, { ...rules }))}
       />

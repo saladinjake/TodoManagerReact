@@ -1,15 +1,11 @@
 
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, FacebookAuthProvider, GoogleAuthProvider, signInWithPopup, signOut} from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 
-//socian auth
-// Initialize firebase and google providerfirebase.initializeApp(firebaseConfig);
-// const auth = firebase.auth();
-// const provider = new firebase.auth.GoogleAuthProvider();
-// provider.setCustomParameters({ prompt: "select_account" });
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyAHfcOjpYZ0xC_tL-9CHbxdWIqF-319ug8",
@@ -24,6 +20,12 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-// Sign in and sign out sosical auth
-// export const signIn = () => auth.signInWithPopup(provider);
-// export const signOut = () => auth.signOut();
+// Sign in and sign out soscial auth
+export const signInWithProvider = (provider) => signInWithPopup(auth,provider);
+export const signOutOfProvider = () => signOut();
+export const facebook = new FacebookAuthProvider();
+const google = new GoogleAuthProvider();
+google.setCustomParameters({ prompt: "select_account" });
+export google
+
+

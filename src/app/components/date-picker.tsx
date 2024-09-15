@@ -30,7 +30,7 @@ const DatePicker = (props: IProps) => {
         selected={value}
         onChange={(date) => setValue(date)}
         customInput={
-          <CustomDateInput className="h-[44px] bg-white-700 border border-white-900 text-white px-3 rounded-xl w-full text-sm text-start" />
+          <CustomDateInput className="h-[44px] bg-white-700 border border-white-900 text-black-700 px-3 rounded-xl w-full text-sm text-start" />
         }
       />
     </div>
