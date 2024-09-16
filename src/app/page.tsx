@@ -27,7 +27,7 @@ export default function Home() {
       </section>
 
       <section className="hidden lg:block w-1/2 pr-6 py-6">
-        <div className="bg-gray-300 w-full h-full rounded-2xl relative">
+        <div className="bg-gray-300 w-full h-full  relative">
          {/* <Image
             src="/images/login-bg.jpg"
             alt="login-bg"
