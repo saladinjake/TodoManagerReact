@@ -9,4 +9,8 @@
 - [x] Implement read user todo
 - [x] Implement read user authentication traditional login signup
 
+#### More Feature Needed
+- [x] Authentication with Google and Facebook
+- [x] Add user Schedules Manager
+
 
