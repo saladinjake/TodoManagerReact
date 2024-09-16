@@ -25,12 +25,12 @@ const DatePicker = (props: IProps) => {
 
   return (
     <div className="flex flex-col">
-      <label className="text-white font-medium text-sm mb-1">Date</label>
+      <label className="text-black font-medium text-sm mb-1">Date</label>
       <ReactDatePicker
         selected={value}
         onChange={(date) => setValue(date)}
         customInput={
-          <CustomDateInput className="h-[44px] bg-white-700 border border-white-900 text-black-700 px-3 rounded-xl w-full text-sm text-start" />
+          <CustomDateInput className="h-[44px] bg-[#fff] border border-white-900 text-black-700 px-3 rounded-xl w-full text-sm text-start" />
         }
       />
     </div>

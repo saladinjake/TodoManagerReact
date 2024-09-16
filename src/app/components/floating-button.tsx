@@ -33,7 +33,7 @@ const FloatingButton = (props: IProps) => {
         showOverlay
           ? "w-full h-full bottom-0 right-0"
           : "w-[71px] h-[71px] rounded-full bottom-5 right-[5%]"
-      }  bg-[#000] fixed transition-all`}
+      }  bg-[#fafafa] fixed transition-all`}
     >
       <button
         className="relative w-[71px] h-[71px] rounded-full flex items-center justify-center"
