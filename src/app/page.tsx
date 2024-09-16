@@ -26,8 +26,8 @@ export default function Home() {
         </footer>
       </section>
 
-      <section className="hidden lg:block w-1/2 pr-6 py-6">
-        <div className="bg-gray-300 w-full h-full  relative">
+      <section className="hidden lg:block w-1/2 ">
+        <div className="bg-[#fafafa] w-full h-full  relative">
          {/* <Image
             src="/images/login-bg.jpg"
             alt="login-bg"
